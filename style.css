@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Varta:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varta", sans-serif; 
+}
+:root
+{
+    --gray:#808080;
+    --black:#000;
+}
+body
+{   
+    background-image: url("images/bg-cover.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+.header-wrapper{
+    margin: 25px 20px;
+    color: var(--gray);
+}
+.header-wrapper>h1:before
+{
+    content: '';
+border-left: 8px solid var(--black);
+margin-right: 15px;
+vertical-align: middle;
+}
+.header-wrapper>p{
+    margin: 15px 20px;
+    line-height: 1.8rem;
+}
+/*---slider css---- */
+.slider_wrapper
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+   
+    
+}
+.pre, .next
+{
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--black);
+    border: none;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    cursor: pointer;
+   
+position: absolute;
+top: 50%;
+
+}
+.pre{
+    left: 1%;
+}
+.next{
+    right: 1%;
+}
+.slider_wrapper .slider{
+   
+  
+    width: 100%;
+     margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 20px) / 3);
+   gap: 10px;
+   overflow-x: hidden;
+   overflow-y: auto;
+   scroll-behavior: smooth;
+   
+
+}
+.slider_content>img{
+    width: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+
+}
+.slider .slider_content{
+   margin: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  transition: transform .5s; /* Animation */
+   
+}
+.slider .slider_content:hover{
+    background-image: url("images/wheel-bg.jpg");
+    transform:scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+  border: 1px solid var(--black);
+}
+.slider .slider_content>h2{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
+    line-height: 1.7rem;
+}
+.slider .slider_content>p{
+    font-size: 14px;
+    color: var(--black);
+}
+.slider .slider_content>span{
+    font-weight: bold;
+}
+@media screen and (max-width:900px) {
+    .slider_wrapper .slider{
+        gap:10px;
+    grid-auto-columns: calc((100% - 20px) / 2);
+    }
+    
+}
+@media screen and (max-width:600px) {
+    .slider_wrapper .slider{
+    grid-auto-columns: 100%;
+    
+    }
+    
+}
